@@ -1,0 +1,140 @@
+// ==========================================================================
+// Layout / Hero
+// ==========================================================================
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: $space-xl $space-lg;
+    text-align: center;
+    background-color: $color-white;
+    overflow: hidden;
+
+    // 背景の光るグラデーション(ブラー円)
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.35;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    &::before {
+        width: 400px;
+        height: 400px;
+        top: -100px;
+        left: -100px;
+        background: $color-accent;
+        animation: hero-float-1 12s ease-in-out infinite;
+    }
+
+    &::after {
+        width: 320px;
+        height: 320px;
+        bottom: -80px;
+        right: -80px;
+        background: $color-accent-dark;
+        animation: hero-float-2 14s ease-in-out infinite;
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+    }
+
+    &__lead {
+        margin: 0 0 $space-sm;
+        color: $color-accent;
+        font-size: $font-size-base;
+        font-family: $font-en, $font-jp;
+        letter-spacing: $letter-spacing-heading;
+        text-transform: uppercase;
+        opacity: 0;
+        animation: hero-fade-up 0.8s ease-out 0.1s forwards;
+    }
+
+    &__title {
+        margin: 0 0 $space-md;
+        font-size: 64px;
+        font-family: $font-en, $font-jp;
+        letter-spacing: $letter-spacing-heading;
+        color: $color-black;
+        opacity: 0;
+        animation: hero-fade-up 0.8s ease-out 0.3s forwards;
+    }
+
+    &__desc {
+        margin: 0 0 $space-lg;
+        color: $color-gray-mid;
+        font-size: $font-size-large;
+        font-family: $font-en, $font-jp;
+        line-height: 1.8;
+        opacity: 0;
+        animation: hero-fade-up 0.8s ease-out 0.5s forwards;
+    }
+
+    &__cta {
+        display: inline-block;
+        padding: 14px 40px;
+        background-color: $color-black;
+        color: $color-white;
+        text-decoration: none;
+        font-size: $font-size-base;
+        font-family: $font-en, $font-jp;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        opacity: 0;
+        animation: hero-fade-up 0.8s ease-out 0.7s forwards;
+
+        &:hover {
+            background-color: $color-accent;
+            transform: translateY(-2px);
+        }
+    }
+}
+
+// テキストがふわっと下から浮かび上がるアニメーション
+@keyframes hero-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// 背景の光がゆっくり漂うアニメーション
+@keyframes hero-float-1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(60px, 40px); }
+}
+
+@keyframes hero-float-2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-50px, -30px); }
+}
+
+
+// スマホ対応
+@media (max-width: $breakpoint-md) {
+    .hero {
+        min-height: 60vh;
+        padding: $space-lg $space-md;
+
+        &__title {
+            font-size: 40px;
+        }
+
+        &__desc {
+            font-size: $font-size-base;
+        }
+    }
+}

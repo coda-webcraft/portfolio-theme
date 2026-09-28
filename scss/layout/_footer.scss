@@ -1,0 +1,77 @@
+// ==========================================================================
+// Layout / Footer
+// ==========================================================================
+
+.site-footer {
+    padding: $space-xl $space-lg;
+    background-color: $color-black;
+    text-align: center;
+
+    &__inner {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        color: $color-white;
+    }
+
+    &__lead {
+        margin: 0 0 $space-lg;
+        color: $color-gray-mid;
+        font-size: $font-size-base;
+        font-family: $font-en, $font-jp;
+    }
+
+    &__email {
+        display: inline-block;
+        margin-bottom: $space-xl;
+        color: $color-white;
+        font-size: $font-size-large;
+        font-family: $font-en, $font-jp;
+        text-decoration: none;
+        border-bottom: 1px solid $color-accent;
+
+        &:hover {
+            color: $color-accent;
+        }
+    }
+
+    &__sns {
+        display: flex;
+        justify-content: center;
+        gap: $space-lg;
+        margin: 0 0 $space-xl;
+        padding: 0;
+        list-style: none;
+
+        a {
+            color: $color-gray-mid;
+            text-decoration: none;
+            font-size: $font-size-small;
+            font-family: $font-en, $font-jp;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+
+    &__copyright {
+        margin: 0;
+        color: $color-gray-mid;
+        font-size: $font-size-small;
+        font-family: $font-en, $font-jp;
+    }
+}
+
+// スマホ対応
+@media (max-width: $breakpoint-md) {
+    .site-footer {
+        padding: $space-lg $space-md;
+
+        &__sns {
+            gap: $space-md;
+        }
+    }
+}

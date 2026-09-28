@@ -1,0 +1,46 @@
+// ==========================================================================
+// Layout / Skills
+// ==========================================================================
+
+.skills {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $space-xl $space-lg;
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-md;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        padding: 10px 24px;
+        border: 1px solid $color-border;
+        color: $color-black;
+        font-size: $font-size-base;
+        font-family: $font-en, $font-jp;
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent;
+            color: $color-accent;
+        }
+    }
+}
+
+// スマホ対応
+@media (max-width: $breakpoint-md) {
+    .skills {
+        padding: $space-lg $space-md;
+    }
+
+    .skills-list li {
+        padding: 8px 16px;
+        font-size: $font-size-small;
+    }
+}

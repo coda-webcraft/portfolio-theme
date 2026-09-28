@@ -1,0 +1,98 @@
+// ==========================================================================
+// Layout / Works
+// ==========================================================================
+
+.works {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: $space-xl $space-lg;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-xl;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+        padding: $space-lg;
+        border: 1px solid $color-border;
+        transition: border-color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            border-color: $color-accent;
+            transform: translateY(-4px);
+        }
+
+        h3 {
+            margin: 0 0 $space-sm;
+            font-size: $font-size-large;
+            font-family: $font-en, $font-jp;
+            color: $color-black;
+        }
+
+        p {
+            margin: 0;
+            color: $color-gray-mid;
+            font-size: $font-size-base;
+            font-family: $font-en, $font-jp;
+            line-height: 1.8;
+        }
+    }
+
+    &__thumb {
+        margin-bottom: $space-md;
+        aspect-ratio: 1200 / 624;
+        overflow: hidden;
+        background-color: $color-gray-light;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left top;
+        }
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space-sm;
+        margin: $space-md 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            padding: 4px 12px;
+            background-color: $color-gray-light;
+            color: $color-gray-mid;
+            font-size: $font-size-small;
+            font-family: $font-en, $font-jp;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        margin-top: $space-sm;
+        color: $color-accent;
+        text-decoration: none;
+        font-size: $font-size-small;
+        font-family: $font-en, $font-jp;
+        border-bottom: 1px solid $color-accent;
+
+        &:hover {
+            color: $color-accent-dark;
+            border-color: $color-accent-dark;
+        }
+    }
+}
+
+// スマホ対応
+@media (max-width: $breakpoint-md) {
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: $space-lg;
+    }
+}
