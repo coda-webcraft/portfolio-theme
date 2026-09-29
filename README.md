@@ -10,13 +10,16 @@ Web制作の案件獲得を目指して制作した、フリーランス(屋号�
 
 ## サイトイメージ
 
-### PC表示
-
-![PC表示](./assets/screenshot/pc.png)
-
-### SP表示
-
-![SP表示](./assets/screenshot/sp.png)
+<table>
+  <tr>
+    <td align="center"><strong>PC表示</strong></td>
+    <td align="center"><strong>SP表示</strong></td>
+  </tr>
+  <tr>
+    <td><img src="./assets/screenshot/pc.png" width="400"></td>
+    <td><img src="./assets/screenshot/sp.png" width="200"></td>
+  </tr>
+</table>
 
 ## 使用技術
 
